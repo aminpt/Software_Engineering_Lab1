@@ -10,13 +10,13 @@
 .todo-list li.completed {
   text-decoration: line-through;
   color: #888;
-  background-color: #37db62;
+  background-color: #38473c;
 }
 
 .app {
   width: 400px;
   margin: 3rem auto;
-  background: white;
+  background: rgb(88, 65, 89);
   border-radius: 8px;
   padding: 1rem 1.5rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
