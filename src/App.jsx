@@ -47,7 +47,13 @@ function App() {
         />
         <button onClick={addTodo}>Add</button>
       </div>
-      <TodoList todos={todos} removeTodo={removeTodo} />
+
+      <TodoList 
+          todos={todos} 
+          removeTodo={removeTodo} 
+          toggleTodo={toggleTodo}
+        />
+
       <footer className="footer">
         <p>Created by Amin Pourtavanaie and Davood Kareshki</p>
       </footer>
