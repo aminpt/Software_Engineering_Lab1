@@ -23,6 +23,18 @@ function App() {
     setTodos(todos.filter(t => t.id !== id))
   }
 
+  useEffect(() => {
+    localStorage.setItem('team-todos', JSON.stringify(todos));
+  }, [todos]);
+
+  const toggleTodo = (id) => {
+    setTodos(todos.map(t => t.id === id ? { ...t, completed: !t.completed } : t));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') addTodo();
+  };
+
   return (
     <div className="app">
       <h1>📋 Team CI/CD Development Todo List</h1>
@@ -40,6 +52,7 @@ function App() {
       </footer>
     </div>
   )
+
 }
 
 export default App
