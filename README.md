@@ -2,12 +2,10 @@
 
 این پروژه برای تمرین کار با **`git`**، شاخه‌ها، **`conflict`** و استقرار خودکار در **`GitHub Pages`** ایجاد شده است.
 
----
 
 ## 📂 آدرس GitHub Page:
 🔗 https://github.com/aminpt/Software_Engineering_Lab1
 
----
 
 ## ساختار شاخه‌ها
 
@@ -33,7 +31,6 @@
         </tr>
     </tbody>
 </table>
----
 
 ## 📜 Commit Log (نمونه)
 
@@ -68,7 +65,6 @@
         </tr>
     </tbody>
 </table>
----
 
 ## Conflicts
 
@@ -76,32 +72,31 @@
 
 در **`conflict`** دوم همین اتفاق برای فایل **`App.css`** رخ داد و تغییر هم‌زمان رنگ **`background`** سبب ایجاد **`conflict`** شد.
 
----
 
 ## ⚙️ GitHub Actions
 
 در این مرحله برای خودکارسازی فرایند **`build`** و استقرار پروژه، پوشه‌ی **`.github/workflows`** ساخته شد و فایل **`deploy.yml`** در آن قرار گرفت تا مراحل نصب **`Node.js`**، **`build`** پروژه و انتشار خروجی در شاخه‌ی **`gh-pages`** را انجام دهد. این **`workflow`** به‌گونه‌ای تنظیم شد که پس از هر **`merge`** به شاخه‌ی **`main`** به‌صورت خودکار اجرا شود. همچنین مقدار **`base`** در فایل **`vite.config.js`** برابر با نام ریپازیتوری قرار داده شد تا **`GitHub Pages`** مسیر را درست تشخیص دهد و تنظیمات در بخش **`Pages`** روی شاخه‌ی **`gh-pages`** انجام شد تا نسخه‌ی جدید سایت به‌صورت خودکار در آدرس **`GitHub Pages`** منتشر گردد.
 
+قابل دسترس در این لینک: https://aminpt.github.io/Software_Engineering_Lab1/
 
 ## پرسش ها
 
 ###  پوشه‌ی **`.git`**
 
+<div dir="rtl">
 پوشه‌ای است که تمام **`metadata`** نسخه‌ی پروژه را ذخیره می‌کند:
 - تاریخچه **`commit`**ها (درون **`object`**ها و **`refs`**)
 - تنظیمات **`remote`**
 - **`staging area`** (**`index`**)
 - و فایل **`HEAD`** برای اشاره به **`branch`** جاری  
 با دستور **`git init`** ساخته می‌شود.
-
----
+</div>
 
 ### Atomic Commit / Pull Request
 
 یعنی هر **`commit`** یا **`PR`** باید یک تغییر مستقل و کامل باشد که شکست نیمه‌کار ندارد.  
 مثلا «افزودن یک قابلیت» یا «رفع یک باگ خاص» نه ترکیب چندین مورد نامرتبط.
 
----
 
 ### تفاوت‌های fetch, pull, merge, rebase, cherry-pick
 
@@ -141,19 +136,41 @@
         </tr>
     </tbody>
 </table>
----
+
 
 ### تفاوت‌های reset, revert, restore, switch, checkout
 
-| دستور | کارکرد |
-|-------|---------|
-| **`reset`** | تاریخچه‌ی **`commit`** را به قبلی برمی‌گرداند (تغییر **`HEAD`**) |
-| **`revert`** | **`commit`** معکوس می‌سازد (تاریخچه حفظ می‌شود) |
-| **`restore`** | برای بازگردانی فایل‌ها در **`working directory/stage`** |
-| **`switch`** | برای تغییر **`branch`** (نسخه مدرن‌تر نسبت به **`checkout`**) |
-| **`checkout`** | کاربرد چندمنظوره: تغییر **`branch`** یا بازیابی فایل‌ها |
+<table dir="rtl" style="width:100%; text-align:right;">
+    <thead>
+        <tr>
+            <th style="width:30%; text-align:right;">دستور</th>
+            <th style="width:70%; text-align:right;">کارکرد</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align:right;">reset</td>
+            <td style="text-align:right;">تاریخچه‌ی commit را به قبلی برمی‌گرداند (تغییر HEAD)</td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">revert</td>
+            <td style="text-align:right;">commit معکوس می‌سازد (تاریخچه حفظ می‌شود)</td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">restore</td>
+            <td style="text-align:right;">برای بازگردانی فایل‌ها در working directory/stage</td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">switch</td>
+            <td style="text-align:right;">برای تغییر branch (نسخه مدرن‌تر نسبت به checkout)</td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">checkout</td>
+            <td style="text-align:right;">کاربرد چندمنظوره: تغییر branch یا بازیابی فایل‌ها</td>
+        </tr>
+    </tbody>
+</table>
 
----
 
 ### Stage یا Index
 
@@ -161,21 +178,36 @@
 دستور **`git add`** فایل را به **`stage`** می‌برد.  
 دستور **`git stash`** تغییرات فعلی را موقتا ذخیره می‌کند تا پوشه تمیز شود.
 
----
+
 
 ### Snapshot
 
 هر **`commit`** در **`git`**، یک **`snapshot`** (عکس کامل وضعیت فایل‌ها) از پروژه است؛  
 **`commit`**ها به صورت زنجیره‌وار (**`hash chain`**) نگهداری می‌شوند.
 
----
+
 
 ### Local vs Remote Repository
 
-| نوع | محل ذخیره | توضیح |
-|------|------------|--------|
-| **`Local`** | سیستم توسعه‌دهنده | روی دستگاه توسعه تست و **`commit`** انجام می‌شود |
-| **`Remote`** | روی سرور **`GitHub`** یا **`GitLab`** | مخزن مرکزی برای همکاری و هم‌گام‌سازی تغییرات |
-
----
+<table dir="rtl" style="width:100%; text-align:right;">
+    <thead>
+        <tr>
+            <th style="width:20%; text-align:right;">نوع</th>
+            <th style="width:40%; text-align:right;">محل ذخیره</th>
+            <th style="width:40%; text-align:right;">توضیح</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align:right;">Local</td>
+            <td style="text-align:right;">سیستم توسعه‌دهنده</td>
+            <td style="text-align:right;">روی دستگاه توسعه تست و commit انجام می‌شود</td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Remote</td>
+            <td style="text-align:right;">روی سرور GitHub یا GitLab</td>
+            <td style="text-align:right;">مخزن مرکزی برای همکاری و هم‌گام‌سازی تغییرات</td>
+        </tr>
+    </tbody>
+</table>
 </div>
