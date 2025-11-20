@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
 import TodoList from './components/TodoList.jsx'
 import './App.css'
+import React, { useState, useEffect } from 'react'
 
 function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Build the Git and CI/CD project' },
-    { id: 2, text: 'Practice merging and resolving conflicts' },
-  ])
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem('team-todos');
+    return saved ? JSON.parse(saved) : [
+      { id: 1, text: 'Build the Git and CI/CD project', completed: false },
+      { id: 2, text: 'Practice merging and resolving conflicts', completed: false },
+    ];
+  });  
   const [newTodo, setNewTodo] = useState('')
 
   const addTodo = () => {
