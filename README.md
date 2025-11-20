@@ -31,7 +31,9 @@
 ---
 
 ## ⚔️ Conflictها
+در conflict اول امین پورتوانایی در شاخه ی dev فایل TodoList.jsx را تغییر داده بود و Dw آن را حذف کرده بود و داود کارشکی در شاخه ی feature فایل TodoList.jsx را تغییر داده بود و به جای Dw از بلاک سفید استفاده کرده بود. بعد از merge شدن شاخه ی dev در main تغییرات داود کارشکی، با conflict رو به رو شد. 
 
-دو conflict تمرینی بین شاخه‌های feature/ui و feature/api در فایل App.jsx ایجاد و حل شد.
-
+در conflict دوم همین اتفاق برای فایل App.css رخ داد و تغییر هم‌زمان رنگ background سبب ایجاد conflict شد.
 ---
+
+
