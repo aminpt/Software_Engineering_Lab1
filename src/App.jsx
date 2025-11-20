@@ -35,6 +35,10 @@ function App() {
     if (e.key === 'Enter') addTodo();
   };
 
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => !todo.completed))
+  }
+
   return (
     <div className="app">
       <h1>📋 Team CI/CD Development Todo List</h1>
@@ -53,6 +57,25 @@ function App() {
           removeTodo={removeTodo} 
           toggleTodo={toggleTodo}
         />
+      
+      {todos.some(t => t.completed) && (
+          <div style={{textAlign: 'center', marginTop: '10px'}}>
+            <button 
+              onClick={clearCompleted}
+              style={{
+                background: 'transparent',
+                border: '1px solid #ff4d4d',
+                color: '#ff4d4d',
+                padding: '5px 10px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontSize: '0.8rem'
+              }}
+            >
+              Clear Completed Tasks
+            </button>
+          </div>
+        )}
 
       <footer className="footer">
         <p>Created by Amin Pourtavanaie and Davood Kareshki</p>
