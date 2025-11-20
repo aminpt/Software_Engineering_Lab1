@@ -6,7 +6,7 @@ export default function TodoList({ todos, removeTodo, toggleTodo }) {
       {todos.map(todo => (
         <li key={todo.id} className={todo.completed ? 'completed' : ''}>
           <span onClick={() => toggleTodo(todo.id)} style={{cursor: 'pointer', flex: 1}}>
-            {todo.completed ? '✅ ' : 'Dw '} {}
+            {todo.completed ? '✅ ' : '⬜ '} {}
             {todo.text}
           </span>
           <button onClick={() => removeTodo(todo.id)}>❌</button>
