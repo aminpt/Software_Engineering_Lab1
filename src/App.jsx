@@ -43,6 +43,7 @@ function App() {
           placeholder="Add a new task..."
           value={newTodo}
           onChange={e => setNewTodo(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button onClick={addTodo}>Add</button>
       </div>
