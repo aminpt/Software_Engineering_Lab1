@@ -84,12 +84,16 @@
 ###  پوشه‌ی **`.git`**
 
 <div dir="rtl">
-پوشه‌ای است که تمام **`metadata`** نسخه‌ی پروژه را ذخیره می‌کند:
-- تاریخچه **`commit`**ها (درون **`object`**ها و **`refs`**)
-- تنظیمات **`remote`**
-- **`staging area`** (**`index`**)
-- و فایل **`HEAD`** برای اشاره به **`branch`** جاری  
-با دستور **`git init`** ساخته می‌شود.
+پوشه‌ای است که تمام metadata نسخه‌ی پروژه را ذخیره می‌کند:
+
+- تاریخچه commit ها (درون objectها و refs)
+
+- تنظیمات remote
+
+- staging area (index)
+
+- و فایل HEAD برای اشاره به branch جاری  
+با دستور git init ساخته می‌شود.
 </div>
 
 ### Atomic Commit / Pull Request
